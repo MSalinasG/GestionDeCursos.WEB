@@ -1,0 +1,47 @@
+﻿@using GestionDeCursos.Web.Helpers
+@using GestionDeCursos.Data.Helpers
+
+@model GestionDeCursos.Data.Models.Course
+
+@{
+    ViewData["Title"] = "Details";
+    var showButton = Html.HasRole(GlobalHelper.Role.Administrator) || Html.HasRole(GlobalHelper.Role.Instructor);
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Course Details</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => m.CourseName)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(m => m.CourseName)
+            </dt>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => m.CourseDescription)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(m => m.CourseDescription)
+            </dt>
+
+            @if (!string.IsNullOrWhiteSpace(Model.MongoFileId))
+            {
+                <dt class="col-sm-12">
+                    <a href="@Url.Action("DownloadExcel", "Courses", new{id = Model.Id})">Download Excel File</a>
+                </dt>
+            }
+        </dl>
+    </div>
+    <div class="card-footer">
+        @if (showButton)
+        {
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-edit"></i> Edit</a>
+            <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger rounded-0"><i class="fas fa-trash-alt"></i> Delete</a>
+        }
+        <a asp-action="Index" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-backward"></i> Back to List</a>
+    </div>
+</div>

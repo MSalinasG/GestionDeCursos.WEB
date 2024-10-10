@@ -1,0 +1,283 @@
+﻿
+@using GestionDeCursos.Web.Helpers
+@using GestionDeCursos.Data.Helpers
+
+@{
+    string? resultMessage = TempData["ResultMessage"] as string;
+    string? errorMessage = TempData["ErrorMessage"] as string;
+    string controllerName = ViewBag.ControllerName;
+    bool isLoggedIn = !string.IsNullOrWhiteSpace(Html.GetUserId());
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GCW</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GestionDeCursos.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GestionDeCursos.Web</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+
+                        @if (isLoggedIn)
+                        {
+                            @if (Html.HasRole(GlobalHelper.Role.Administrator) || Html.HasRole(GlobalHelper.Role.Instructor) || Html.HasRole(GlobalHelper.Role.Student))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+                                </li>
+                            }
+
+                            @if (Html.HasRole(GlobalHelper.Role.Administrator) || Html.HasRole(GlobalHelper.Role.Instructor))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Index">Courses</a>
+                                </li>
+                            }
+
+                            @if (Html.HasRole(GlobalHelper.Role.Administrator))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Instructors" asp-action="Index">Instructors</a>
+                                </li>
+                            }
+
+                            @if (Html.HasRole(GlobalHelper.Role.Administrator) || Html.HasRole(GlobalHelper.Role.Instructor))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Applicants" asp-action="Index">Applicants</a>
+                                </li>
+                            }
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a id="loginLink" class="nav-link text-dark" style="cursor: pointer;">Login</a>
+                            </li>
+                        }
+                    </ul>
+
+                    @if (isLoggedIn)
+                    {
+                        <div class="ml-auto">
+                            <span class="navbar-text fw-bold" style="margin-left: auto; padding-right: 15px;">
+                                Welcome, @Html.GetUsername()
+                            </span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            @if (!string.IsNullOrEmpty(resultMessage))
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @resultMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @errorMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    @if (ViewBag.SecondaryBreadcrumb != null)
+                    {
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", controllerName)">@ViewBag.SecondaryBreadcrumb</a></li>
+                    }
+                    <li class="breadcrumb-item active">@ViewBag.PrimaryBreadcrumb</li>
+                </ol>
+            </nav>
+
+            @RenderBody()
+        </main>
+
+        <div id="login-modal-div"></div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - GestionDeCursos.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+
+        $(document).ready(function () {
+            
+            var successMessage = '@resultMessage'; 
+            var errorMessage = '@errorMessage';  
+
+            //sweetalert2
+            if (successMessage) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: successMessage,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+
+            if (errorMessage) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: errorMessage
+                });
+            }
+                         
+            // if (successMessage) {
+            //     toastr.success(successMessage, 'Success');
+            // }
+
+            // if (errorMessage) {
+            //     toastr.error(errorMessage, 'Error');
+            // }
+
+            $("#file-upload").on("change", function () {
+                var fileName = $(this).val().split('\\').pop() || 'No file chosen';
+                $("#file-name").text(fileName);
+            });
+
+            $("#loginLink").on("click", function () {
+                openLoginModal();
+            });
+
+            function validateForm() {
+                $("#formLogin").validate({
+                    errorClass: 'custom-error',
+                    rules: {
+                        Username: {
+                            required: true,
+                            minlength: 3
+                        },
+                        Password: {
+                            required: true,
+                            minlength: 3
+                        }
+                    },
+                    messages: {
+                        Username: {
+                            required: "Username is required.",
+                            minlength: "Type 3 characters as minimum."
+                        },
+                        Password: {
+                            required: "Password is required.",
+                            minlength: "Type 3 characters as minimum."
+                        }
+                    }
+                });
+            }
+
+            function openLoginModal() {
+                const urlModal = '@Url.Action("GetLoginModal", "Home")';
+
+                $.ajax({
+                    url: urlModal,
+                    type: "GET",
+                    contentType: "application/html;charset=utf-8",
+                    dataType: "html",
+                    success: function (result) {
+                        if (result) {
+                            $("#login-modal-div").empty();
+                            $("#login-modal-div").html(result);
+                            $("#login-modal").modal('show');
+                            validateForm();
+                        } else {
+                            toastr.error("Error while opening the modal.", 'Error');
+                        }
+                    },
+                    error: function (errorMessage) {
+                        toastr.error(errorMessage, 'Error');
+                    }
+                });
+            }
+
+            window.sendLogin = function () {
+                var form = $("#formLogin");
+                if (!form.valid()) {
+                    return;
+                }
+
+                var token = $('input[name="__RequestVerificationToken"]', form).val();
+
+                var objUser = {
+                    Username: $("#login-form-div #Username").val(),
+                    Password: $("#login-form-div #Password").val()
+                };
+
+                const urlPostLogin = '@Url.Action("VerifyLogin", "Home")';
+
+                $.ajax({
+                    url: urlPostLogin,
+                    data: {
+                        __RequestVerificationToken: token,
+                        viewModel: objUser
+                    },
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result && result.status == 'success') {
+                            $("#login-modal").modal('hide');
+                            window.location.reload();
+                        } else {
+                            toastr.error(result.message, 'Error');
+                        }
+                    },
+                    error: function (errorMessage) {
+                        toastr.error(errorMessage, 'Error');
+                    }
+                });
+            };
+        });
+
+    </script>
+
+</body>
+</html>

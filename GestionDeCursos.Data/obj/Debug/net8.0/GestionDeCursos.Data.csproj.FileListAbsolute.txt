@@ -1,0 +1,42 @@
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.deps.json
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.runtimeconfig.json
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.pdb
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.csproj.AssemblyReference.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.AssemblyInfoInputs.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.AssemblyInfo.cs
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.csproj.CoreCompileInputs.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\refint\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.pdb
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.genruntimeconfig.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\AGestionDeCursosV6\GestionDeCursosV6\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\ref\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.deps.json
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.runtimeconfig.json
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.pdb
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.csproj.AssemblyReference.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.AssemblyInfoInputs.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.AssemblyInfo.cs
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.csproj.CoreCompileInputs.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\refint\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.pdb
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.genruntimeconfig.cache
+C:\Users\Maicol\Desktop\Nueva carpeta (2)\NET CORE DEVELOPER\GestionDeCursos\GestionDeCursos.Data\obj\Debug\net8.0\ref\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.deps.json
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.runtimeconfig.json
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\bin\Debug\net8.0\GestionDeCursos.Data.pdb
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.csproj.AssemblyReference.cache
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.AssemblyInfoInputs.cache
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.AssemblyInfo.cs
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.csproj.CoreCompileInputs.cache
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\refint\GestionDeCursos.Data.dll
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.pdb
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\GestionDeCursos.Data.genruntimeconfig.cache
+C:\Users\Maicol\Desktop\GestionDeCursos.WEB\GestionDeCursos.Data\obj\Debug\net8.0\ref\GestionDeCursos.Data.dll

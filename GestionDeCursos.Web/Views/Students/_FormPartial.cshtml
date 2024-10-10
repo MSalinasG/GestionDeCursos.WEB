@@ -1,0 +1,57 @@
+﻿@model GestionDeCursos.Data.Models.Student
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="StudentName" class="form-label fw-bold"></label>
+            <input asp-for="StudentName" class="form-control" />
+            <span asp-validation-for="StudentName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="CourseId" class="form-label fw-bold"></label>
+            <select asp-for="CourseId" asp-items="ViewBag.CourseId" class="form-control"></select>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="CourseFee" class="form-label fw-bold"></label>
+            <input asp-for="CourseFee" class="form-control" />
+            <span asp-validation-for="CourseFee" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="CourseDuration" class="form-label fw-bold"></label>
+            <input asp-for="CourseDuration" class="form-control" />
+            <span asp-validation-for="CourseDuration" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="CourseStartDate" class="form-label fw-bold"></label>
+            <input asp-for="CourseStartDate" class="form-control" />
+            <span asp-validation-for="CourseStartDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="BatchTime" class="form-label fw-bold"></label>
+            <input asp-for="BatchTime" class="form-control" />
+            <span asp-validation-for="BatchTime" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="InstructorId" class="form-label fw-bold"></label>
+            <select asp-for="InstructorId" asp-items="ViewBag.InstructorId" class="form-control"></select>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿ @model GestionDeCursos.Data.Models.Course
+
+ <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="CourseName" class="form-label fw-bold"></label>
+            <input asp-for="CourseName" class="form-control" />
+            <span asp-validation-for="CourseName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="CourseDescription" class="form-label fw-bold"></label>
+            <input asp-for="CourseDescription" class="form-control" />
+            <span asp-validation-for="CourseDescription" class="text-danger"></span>
+        </div>
+    </div>
+ </div>
+
+@if (Model != null && !string.IsNullOrWhiteSpace(Model.MongoFileId))
+{
+    <div class="form-group">
+        <label>The course already has a file stored. would you like overwrite/clear the file?</label>
+        <div>
+            <input type="checkbox" asp-for="OverwriteFile" />
+            <label for="OverwriteFile">Overwrite/clear existing file</label>
+        </div>
+    </div>
+}
+else if (Model != null)
+{
+    <input type="hidden" asp-for="OverwriteFile" />
+}
+
+@* <div class="form-group">
+    <label asp-for="ExcelFileData" class="form-label fw-bold"></label>
+    <input asp-for="ExcelFileData" class="form-control" accept=".xlsx, .xls" />
+    <span asp-validation-for="ExcelFileData" class="text-danger"></span>
+</div> *@
+
+<div class="form-group pt-3">
+    <div class="custom-file-upload">
+        <label for="file-upload" class="file-upload-button">Upload Excel File</label>
+        <input id="file-upload" asp-for="ExcelFileData" type="file" accept=".xlsx, .xls" />
+    </div>
+    <span id="file-name" class="file-name">No file chosen</span>
+    <div class="row">
+        <span asp-validation-for="ExcelFileData" class="text-danger"></span>
+    </div>
+</div>

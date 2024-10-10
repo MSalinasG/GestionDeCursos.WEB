@@ -1,0 +1,47 @@
+﻿@using GestionDeCursos.Web.Helpers
+@using GestionDeCursos.Data.Helpers
+
+@model GestionDeCursos.Data.Models.Instructor
+
+@{
+    ViewData["Title"] = "Details";
+    var showButton = Html.HasRole(GlobalHelper.Role.Administrator);
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Instructor Details</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => m.InstructorName)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(m => m.InstructorName)
+            </dt>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => m.Qualification)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(m => m.Qualification)
+            </dt>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => m.Experience)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(m => m.Experience)
+            </dt>
+        </dl>
+    </div>
+    <div class="card-footer">
+        @if (showButton)
+        {
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-edit"></i> Edit</a>
+            <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-trash-alt"></i> Delete</a>
+        }
+        <a asp-action="Index" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-backward"></i> Back to List</a>
+    </div>
+</div>

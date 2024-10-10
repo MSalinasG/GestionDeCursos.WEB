@@ -1,0 +1,46 @@
+﻿@model GestionDeCursos.Web.Models.LoginViewModel
+
+<div id="login-modal" class="modal fade" tabindex="-1"
+        aria-labelledby="loginModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel"><b>User Login</b></h5>
+            </div>
+
+            <div id="login-form-div" class="modal-body">
+
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formLogin" }))
+                {
+                    @Html.AntiForgeryToken();
+
+                    <div class="mb-3">
+
+                        <div class="form-group">
+                            <label class="fw-bold" for="Username">Username</label>
+                            @Html.TextBoxFor(x => x.Username, new { @class = "form-control", id = "Username" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="fw-bold" for="Password">Password</label>
+                            @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "Password" })
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+            <div class="modal-footer">
+                <button onclick="sendLogin()" type="button" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-save"></i> Login</button>
+                <button type="button" class="btn btn-sm btn-secondary rounded-0" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i> Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

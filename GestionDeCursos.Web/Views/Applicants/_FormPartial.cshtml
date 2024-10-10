@@ -1,0 +1,62 @@
+﻿@model GestionDeCursos.Data.Models.Applicants
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Nombre" class="form-label fw-bold"></label>
+            <input asp-for="Nombre" class="form-control" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+    </div> 
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Apellido" class="form-label fw-bold"></label>
+            <input asp-for="Apellido" class="form-control" />
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">    
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Dni" class="form-label fw-bold"></label>
+            <input asp-for="Dni" class="form-control" />
+            <span asp-validation-for="Dni" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Nacimiento" class="form-label fw-bold"></label>
+            <input asp-for="Nacimiento" class="form-control" />
+            <span asp-validation-for="Nacimiento" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+
+@if (Model != null && !string.IsNullOrWhiteSpace(Model.FichaPdfMongoFileId))
+{
+    <div class="form-group">
+        <label>The applicants already has a file stored. would you like overwrite/clear the file?</label>
+        <div>
+            <input type="checkbox" asp-for="OverwriteFile" />
+            <label for="OverwriteFile">Overwrite/clear existing file</label>
+        </div>
+    </div>
+}
+else if (Model != null)
+{
+    <input type="hidden" asp-for="OverwriteFile" />
+}
+
+<div class="form-group pt-3">
+    <div class="custom-file-upload">
+        <label for="file-upload" class="file-upload-button">Upload PDF File</label>
+        <input id="file-upload" asp-for="PdfFileData" type="file" accept=".pdf" />
+    </div>
+    <span id="file-name" class="file-name">No file chosen</span>
+    <div class="row">
+        <span asp-validation-for="PdfFileData" class="text-danger"></span>
+    </div>
+</div>
+ 

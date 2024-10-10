@@ -1,0 +1,25 @@
+﻿  @model GestionDeCursos.Data.Models.Instructor
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="InstructorName" class="form-label fw-bold"></label>
+            <input asp-for="InstructorName" class="form-control" />
+            <span asp-validation-for="InstructorName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Qualification" class="form-label fw-bold"></label>
+            <input asp-for="Qualification" class="form-control" />
+            <span asp-validation-for="Qualification" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Experience" class="form-label fw-bold"></label>
+            <input asp-for="Experience" class="form-control" />
+            <span asp-validation-for="Experience" class="text-danger"></span>
+        </div>
+    </div>
+</div>

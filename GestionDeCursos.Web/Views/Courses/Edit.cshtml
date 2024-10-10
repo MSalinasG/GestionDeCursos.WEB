@@ -1,0 +1,32 @@
+﻿ @model GestionDeCursos.Data.Models.Course
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            <h4>Edit Course</h4>
+        </div>
+        <div class="card-body">
+
+            @{
+                await Html.RenderPartialAsync("_FormPartial", Model);
+            }
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-save"></i> Update</button>
+            <a asp-action="Index" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-backward"></i> Back to List</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

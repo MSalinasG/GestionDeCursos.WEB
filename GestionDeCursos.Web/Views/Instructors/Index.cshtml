@@ -1,0 +1,49 @@
+﻿@using GestionDeCursos.Web.Helpers
+@using GestionDeCursos.Data.Helpers
+
+@model IEnumerable<GestionDeCursos.Data.Models.Instructor>
+
+@{
+    ViewData["Title"] = "Index";
+    var showButton = Html.HasRole(GlobalHelper.Role.Administrator);
+}
+
+<h3 class="text-center text-uppercase">List of Instructors</h3>
+
+@if (showButton)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary rounded-0"><i class="fas fa-plus-circle"></i> Add New</a>
+    </p>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(c => c.InstructorName)</th>
+            <th>@Html.DisplayNameFor(c => c.Qualification)</th>
+            <th>@Html.DisplayNameFor(c => c.Experience)</th>
+            @if (showButton)
+            {
+                <th>Action(s)</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><a asp-action="Details" asp-route-id="@item.Id">@item.InstructorName</a></td>
+                <td>@item.Qualification</td>
+                <td>@item.Experience</td>
+                @if (showButton)
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-edit"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@using GestionDeCursos.Web.Helpers
+@using GestionDeCursos.Data.Helpers
+
+@model IEnumerable<GestionDeCursos.Data.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+    var showButton = Html.HasRole(GlobalHelper.Role.Administrator) || Html.HasRole(GlobalHelper.Role.Instructor);
+}
+
+<h3 class="text-center text-uppercase">List of Students</h3>
+
+@if (showButton)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary rounded-0"><i class="fas fa-plus-circle"></i> Add New</a>
+        <a asp-action="DownloadStudentsExcel" class="btn btn-secondary rounded-0"><i class="fas fa-download"></i> Download Excel</a>
+    </p>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.StudentName)</th>
+            <th>@Html.DisplayNameFor(m => m.Course)</th>
+            <th>@Html.DisplayNameFor(m => m.CourseFee)</th>
+            <th>@Html.DisplayNameFor(m => m.CourseDuration)</th>
+            <th>@Html.DisplayNameFor(m => m.CourseStartDate)</th>
+            <th>@Html.DisplayNameFor(m => m.BatchTime)</th>
+            <th>@Html.DisplayNameFor(m => m.Instructor)</th>
+            @if (showButton)
+            {
+                <th>Action(s)</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td> <a asp-action="Details" asp-route-id="@item.Id">@item.StudentName</a> </td>
+                <td>@item.Course?.CourseName</td>
+                <td>@item.CourseFee</td>
+                <td>@item.CourseDuration (Months)</td>
+                <td>@item.CourseStartDate.ToString("dd-MM-yyyy")</td>
+                <td>@item.BatchTime.ToString("hh\\:mm\\ tt")</td>
+                <td>@item.Instructor?.InstructorName</td>
+                @if (showButton)
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-edit"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

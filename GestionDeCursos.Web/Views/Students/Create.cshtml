@@ -1,0 +1,44 @@
+﻿@model GestionDeCursos.Data.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@* <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Students")">Students List</a></li>
+        <li class="breadcrumb-item active">Create Student</li>
+    </ol>
+</nav> *@
+
+<form asp-action="Create">
+    <div class="card">
+        <div class="card-header">
+            <h4>Create Student</h4>
+        </div>
+        <div class="card-body">
+
+            @{
+                await Html.RenderPartialAsync("_FormPartial", Model);
+            }
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-save"></i> Create</button>
+            <a asp-action="Index" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-backward"></i> Back to List</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        console.log("Esta es la vista de crear");
+    </script>
+
+}
